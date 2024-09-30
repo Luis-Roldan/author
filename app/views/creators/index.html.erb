@@ -1,6 +1,11 @@
 <section>
   <h1>Autors</h1>
   <h3>Lista de autores </h3>
-  <% console %>
-  <%= Creator.all  %>
+  <ol>
+    <% @creators.each do |person| %>
+    <li>
+      <%=person.name %>
+    </li>
+    <% end %>
+  </ol>
 </section>
