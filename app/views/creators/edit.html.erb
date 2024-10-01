@@ -1,2 +1,9 @@
-<h1>Creator#edit</h1>
-<p>Find me in app/views/creator/edit.html.erb</p>
+<section>
+  <h1>edit <%= @creator.name %></h1>
+  <%= link_to "regresar", creators_path %>
+  <%= simple_form_for(@creator) do |f|%>
+    <%= f.input :name, label: "name"  %>
+    <%= f.input :age, label: "age" %>
+    <%= f.submit "edit author", class: 'btn btn-primary' %>
+  <% end %>
+</section>
