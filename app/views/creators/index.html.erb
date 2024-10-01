@@ -5,9 +5,14 @@
     <% @creators.each do |person| %>
     <li>
       <%=person.name %>
+      <%= link_to "specific author", creator_path(person.id), class: "btn btn-secondary m-2" %>
+
     </li>
     <% end %>
   </ol>
 
-  <%= link_to "Add author", new_creator_path, class: "btn btn-primary"   %>
+  <%= link_to "Add author", new_creator_path, class: "btn btn-primary" %>
+  <%= link_to "Add author", new_creator_path, class: "btn btn-primary" %>
+  <%= link_to "Add author", new_creator_path, class: "btn btn-primary" %>
+  <%= link_to "Add author", new_creator_path, class: "btn btn-primary" %>
 </section>
