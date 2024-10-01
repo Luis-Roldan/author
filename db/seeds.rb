@@ -10,6 +10,18 @@
 
 Creator.destroy_all
 
+ puts "seeding authors..."
 10.times do
   Creator.create(name: Faker::Name.name, age: rand(18..100))
+
+  puts "seeding books..."
+
+  30.times do
+    Book.create(title: Faker::Book.name, pages: rand(100..500))
+    puts "seeding books complete!"
+  end
+
+
 end
+
+puts "seeding Complete!"
