@@ -6,12 +6,13 @@
     <li>
       <%=person.name %>
       <%= link_to "specific author", creator_path(person.id), class: "btn btn-secondary m-2" %>
+      <%= link_to "Edit author", edit_creator_path(person.id), class: "btn btn-primary" %>
+      <%= link_to "delete author", creator_path(person), method: :delete, data: { confirm: "Are you sure about terminating this author career?"}, class: "btn btn-danger" %>
 
     </li>
     <% end %>
   </ol>
 
-  <%= link_to "Add author", new_creator_path, class: "btn btn-primary" %>
   <%= link_to "Add author", new_creator_path, class: "btn btn-primary" %>
   <%= link_to "Add author", new_creator_path, class: "btn btn-primary" %>
   <%= link_to "Add author", new_creator_path, class: "btn btn-primary" %>
