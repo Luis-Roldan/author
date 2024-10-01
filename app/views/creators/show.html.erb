@@ -1,2 +1,5 @@
-<h1>Creator#show</h1>
-<p>Find me in app/views/creator/show.html.erb</p>
+<section>
+  <h1>more info about <%= @creator.name %></h1>
+  <%= link_to "regresar", creators_path %>
+  <h2><%= @creator.age %></h2>
+</section>

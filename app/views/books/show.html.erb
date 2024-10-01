@@ -1,5 +1,6 @@
 <section>
   <h1>specific books from <%= @creator.name %></h1>
+  <%= link_to "regresar", creators_path %>
   <ol>
     <% @books_by_creator.each do |book| %>
       <li class="btn btn-primary">
