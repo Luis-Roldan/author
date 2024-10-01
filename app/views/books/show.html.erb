@@ -1,11 +1,15 @@
 <section>
-  <h1>specific book</h1>
-    <%= console %>
+  <h1>specific books from <%= @creator.name %></h1>
   <ol>
     <% @books_by_creator.each do |book| %>
-      <li>
+      <li class="btn btn-primary">
         <%= book.title %>
       </li>
+      <section>
+        <h2>info</h2>
+        <%= book.pages %>
+
+      </section>
     <% end %>
   </ol>
 </section>
