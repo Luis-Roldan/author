@@ -12,5 +12,7 @@ Rails.application.routes.draw do
     resources :books, only: %i[new create]
   end
 
+  resources :books, except: %i[new create]
+
   root "creators#index"
 end

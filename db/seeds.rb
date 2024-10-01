@@ -8,20 +8,23 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 
+Book.destroy_all
 Creator.destroy_all
 
- puts "seeding authors..."
-10.times do
-  Creator.create(name: Faker::Name.name, age: rand(18..100))
+# Reseteamos los IDs en la base de datos (PostgreSQL)
+ActiveRecord::Base.connection.reset_pk_sequence!('creators')
+ActiveRecord::Base.connection.reset_pk_sequence!('books')
 
-  puts "seeding books..."
+puts "seeding authors..."
 
-  30.times do
-    Book.create(title: Faker::Book.name, pages: rand(100..500))
-    puts "seeding books complete!"
+10.times do |i|
+  creator = Creator.create(name: Faker::Name.name, age: rand(18..100))
+
+  puts "seeding books... for creator #{i + 1}"
+
+  5.times do
+    Book.create(title: Faker::Book.title, pages: rand(100..500), creator_id: creator.id)
   end
-
-
 end
 
 puts "seeding Complete!"
