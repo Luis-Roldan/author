@@ -1,6 +1,6 @@
 <section>
   <h1>New Author</h1>
-
+  <%= link_to "regresar", creators_path %>
   <%= simple_form_for(@creator) do |f|%>
     <%= f.input :name, label: "name"  %>
     <%= f.input :age, label: "age" %>
