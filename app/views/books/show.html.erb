@@ -1,0 +1,11 @@
+<section>
+  <h1>specific book</h1>
+    <%= console %>
+  <ol>
+    <% @books_by_creator.each do |book| %>
+      <li>
+        <%= book.title %>
+      </li>
+    <% end %>
+  </ol>
+</section>
