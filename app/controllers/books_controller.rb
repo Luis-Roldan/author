@@ -4,7 +4,10 @@ class BooksController < ApplicationController
   end
 
   def show
-    @books = Book.find(params[:id])
+    @creator = Creator.find(params[:id])
+    @books = Book.all
+    @books_by_creator = @books.select{|b| b.creator_id == @creator.id}
+
   end
 
   def new
