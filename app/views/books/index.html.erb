@@ -1,1 +1,26 @@
-<h1>asdasd</h1>
+<section>
+<h1>all the books</h1>
+<ol>
+  <% @books.each do |book| %>
+    <li>
+      <p>
+        <strong>
+          Book title:
+        </strong>
+        <%= book.title %>
+      </p>
+        <strong>
+          Book pages:
+        </strong>
+        <%= book.pages %>
+      </p>
+      </p>
+        <strong>
+          Book author:
+        </strong>
+        <%= book.creator.name %>
+      </p>
+    </li>
+  <% end %>
+</ol>
+</section>
