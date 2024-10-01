@@ -1,2 +1,9 @@
-<h1>Creator#new</h1>
-<p>Find me in app/views/creator/new.html.erb</p>
+<section>
+  <h1>New Author</h1>
+
+  <%= simple_form_for(@creator) do |f|%>
+    <%= f.input :name, label: "name"  %>
+    <%= f.input :age, label: "age" %>
+    <%= f.submit "Create author", class: 'btn custom-button rounded-pill' %>
+  <% end %>
+</section>
