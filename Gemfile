@@ -74,4 +74,4 @@ group :development do
 end
 
 gem 'faker'
-gem 'country_select'
+gem 'country_select', '~> 8.0'
