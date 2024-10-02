@@ -3,12 +3,16 @@
   <%= link_to "regresar", creators_path %>
   <ol>
     <% @books_by_creator.each do |book| %>
-      <li class="btn btn-primary">
-        <%= book.title %>
+      <li>
+        <h2><strong>Title: </strong><%=  book.title %></h2>
       </li>
       <section>
-        <h2>info</h2>
-        <%= book.pages %>
+        <h2><strong>Info: </strong></h2>
+        <p><strong>Pages: </strong><%= book.pages %></p>
+        <p><strong>Publisher: </strong><%= book.publisher %></p>
+        <p><strong>Genre: </strong><%= book.genre %></p>
+        <p><strong>Rating (1 - 5): </strong><%= book.rating %></p>
+
         <%= link_to "Edit book", edit_book_path(book.id), class: "btn btn-primary" %>
         <%= link_to "delete book", book_path(book.id), data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to burn #{book.title}"}, class: "btn btn-danger" %>
       </section>
