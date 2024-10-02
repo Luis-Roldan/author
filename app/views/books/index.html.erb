@@ -21,6 +21,7 @@
           </strong>
           <%= book.creator.name %>
         </p>
+        <%= link_to "delete book", book_path(book.id), data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to burn #{book.title}"}, class: "btn btn-danger" %>
       </li>
     <% end %>
   </ol>
