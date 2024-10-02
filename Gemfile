@@ -74,3 +74,4 @@ group :development do
 end
 
 gem 'faker'
+gem 'country_select'

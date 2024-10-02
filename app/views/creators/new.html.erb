@@ -4,6 +4,10 @@
   <%= simple_form_for(@creator) do |f|%>
     <%= f.input :name, label: "name"  %>
     <%= f.input :age, label: "age" %>
+    <%= f.input :country, label: "Country", as: :country%>
+    <%= f.input :awards, label: "awards" %>
+    <%= f.input :career, label: "career" %>
+    <%= f.input :active, label: "Still Writting?", as: :select, collection: [["Yes", true], ["No", false]] %>
     <%= f.submit "Create author", class: 'btn btn-primary' %>
   <% end %>
 </section>

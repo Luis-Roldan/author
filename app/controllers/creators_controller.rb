@@ -42,6 +42,6 @@ class CreatorsController < ApplicationController
   private
 
   def creator_params
-    params.require(:creator).permit(:name, :age)
+    params.require(:creator).permit(:name, :age, :country, :awards, :career, :active)
   end
 end
