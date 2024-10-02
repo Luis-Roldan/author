@@ -32,6 +32,31 @@ class BooksController < ApplicationController
     redirect_to book_url, notice: "Deleted book successfully"
   end
 
+
+  def edit
+    if params[:creator_id]
+      @creator = Creator.find(params[:creator_id])
+      @book = @creator.books.find(params[:id])
+    else
+      @book = Book.find(params[:id])
+    end
+  end
+
+  def update
+    if params[:creator_id]
+      @creator = Creator.find(params[:creator_id])
+      @book = @creator.books.find(params[:id])
+    else
+      @book = Book.find(params[:id])
+    end
+
+    if @book.update(book_params)
+      redirect_to book_path(@book.creator_id), notice: 'Book was successfully updated.'
+    else
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
   private
 
   def set_creator

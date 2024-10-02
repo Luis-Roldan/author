@@ -9,6 +9,7 @@
       <section>
         <h2>info</h2>
         <%= book.pages %>
+        <%= link_to "Edit book", edit_book_path(book.id), class: "btn btn-primary" %>
 
       </section>
     <% end %>
