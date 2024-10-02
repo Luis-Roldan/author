@@ -18,12 +18,12 @@ ActiveRecord::Base.connection.reset_pk_sequence!('books')
 puts "seeding authors..."
 
 30.times do |i|
-  creator = Creator.create(name: Faker::Book.author, age: rand(18..100))
+  creator = Creator.create(name: Faker::Book.author, age: rand(18..100), country: Faker::Nation.nationality, career: Faker::Job.field, awards: rand(0..20), active: [true, false].sample )
 
   puts "seeding books... for creator #{i + 1}"
 
   20.times do
-    Book.create(title: Faker::Book.title, pages: rand(100..500), creator_id: creator.id)
+    Book.create(title: Faker::Book.title, pages: rand(100..500), creator_id: creator.id, publisher: Faker::Book.publisher, genre: Faker::Book.genre, rating: rand(1..5))
   end
 end
 
