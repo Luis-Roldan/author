@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_10_02_173708) do
+ActiveRecord::Schema[7.1].define(version: 2024_10_02_174359) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -32,6 +32,10 @@ ActiveRecord::Schema[7.1].define(version: 2024_10_02_173708) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "book_id"
+    t.string "country"
+    t.integer "awards"
+    t.string "career"
+    t.boolean "active"
     t.index ["book_id"], name: "index_creators_on_book_id"
   end
 
