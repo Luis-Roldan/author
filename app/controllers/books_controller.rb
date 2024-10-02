@@ -1,4 +1,5 @@
 class BooksController < ApplicationController
+  before_action :set_creator, only: %w[new create]
   def index
     @books = Book.all
   end
@@ -10,17 +11,16 @@ class BooksController < ApplicationController
   end
 
   def new
-    @book = Book.new
     @creator = Creator.find(params[:creator_id])
+    @book = @creator.books.build
   end
 
   def create
     @creator = Creator.find(params[:creator_id])
-
-    @book = Book.new(book_params)
+    @book = @creator.books.build(book_params)  # Asegura que el libro esté vinculado al creator
 
     if @book.save
-      redirect_to @book, notice: "book was created successfully"
+      redirect_to book_path(@creator.id), notice: "Book was created successfully"
     else
       render :new, status: :unprocessable_entity
     end
@@ -34,6 +34,9 @@ class BooksController < ApplicationController
 
   private
 
+  def set_creator
+    @creator = Creator.find(params[:restaurant_id]) if params[:creator].present?
+  end
 
   def book_params
     params.require(:book).permit(:title, :pages)
