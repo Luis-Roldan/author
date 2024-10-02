@@ -5,6 +5,9 @@
 <%= simple_form_for([@creator, @book]) do |f| %>
     <%= f.input :title, label: "title" %>
     <%= f.input :pages, label: "pages" %>
+    <%= f.input :publisher, label: "publisher" %>
+    <%= f.input :genre, label: "genre" %>
+    <%= f.input :rating, label: "rating", as: :select, collection: [1, 2, 3, 4, 5] %>
     <%= f.submit "edit book", class: 'btn btn-primary' %>
   <% end %>
 </section>
