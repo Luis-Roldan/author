@@ -9,4 +9,4 @@ pin "bootstrap", to: "bootstrap.min.js", preload: true
 pin "@popperjs/core", to: "popper.js", preload: true
 pin "react", to: "https://cdn.skypack.dev/react"
 pin "react-dom", to: "https://cdn.skypack.dev/react-dom"
-pin_all_from "app/javascript/components", under: "controllers"
+pin_all_from "app/javascript/components", under: "components"

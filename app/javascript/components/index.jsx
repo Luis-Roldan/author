@@ -1,10 +1,11 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
-import App from "./App";
+import App from "../components/App"; // Importas el componente App
 
 document.addEventListener("turbo:load", () => {
-  const root = createRoot(
-    document.body.appendChild(document.createElement("div"))
-  );
-  root.render(<App />);
+  const rootElement = document.getElementById("react-app");
+  if (rootElement) {
+    const root = createRoot(rootElement);
+    root.render(<App />); // Aquí renderizas la aplicación React
+  }
 });
