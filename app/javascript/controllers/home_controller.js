@@ -1,13 +1,13 @@
 import { application } from "./application";
-import { createRoot } from "react-dom/client";
-import App from "../components/App"; // Asegúrate de que esta ruta sea correcta
+import { createRoot } from "react-dom/client"; // Importar createRoot
+import App from "../components/App"; // Asegúrate de que la ruta sea correcta
 
 class HomeController {
   connect() {
-    const root = createRoot(document.getElementById("react-root")); // Usa el ID del contenedor
+    console.log("HomeController conectado"); // Mensaje para depuración
+    const root = createRoot(document.getElementById("react-root")); // Usa el ID de tu div
     root.render(<App />);
   }
 }
 
-// Registra el controlador
 application.register("home", HomeController);
