@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'pages/home'
   get 'homepage/index'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
@@ -17,6 +18,8 @@ Rails.application.routes.draw do
 
   # root "creators#index"
 
-  root 'homepage#index'
-  get '/*path' => 'homepage#index'
+  # root 'home#index'
+  # get '/*path' => 'home#index'
+
+  root 'pages#home'
 end
