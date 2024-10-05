@@ -1,8 +1,13 @@
-import { Controller } from "@hotwired/stimulus";
+import { application } from "./application";
+import { createRoot } from "react-dom/client";
+import App from "../components/App"; // Asegúrate de que esta ruta sea correcta
 
-export default class HomeController extends Controller {
+class HomeController {
   connect() {
-    console.log("Homepage controller connected");
-    // Aquí puedes hacer cualquier lógica adicional cuando el controlador se conecte
+    const root = createRoot(document.getElementById("react-root")); // Usa el ID del contenedor
+    root.render(<App />);
   }
 }
+
+// Registra el controlador
+application.register("home", HomeController);
