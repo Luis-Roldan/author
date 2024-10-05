@@ -1,12 +1,9 @@
 import React from "react";
 
-const Home = () => {
+export default function Home() {
   return (
-    <div className="Home">
-      <h1>Welcome to the Home Page</h1>
-      <p>This is the homepage of our React-Rails app.</p>
+    <div>
+      <h2>This is the Home component</h2>
     </div>
   );
-};
-
-export default Home;
+}
