@@ -17,10 +17,4 @@ Rails.application.routes.draw do
   end
 
   resources :books, except: %i[new create]
-
-  # root "creators#index"
-
-  # root 'home#index'
-  # get '/*path' => 'home#index'
-
 end
